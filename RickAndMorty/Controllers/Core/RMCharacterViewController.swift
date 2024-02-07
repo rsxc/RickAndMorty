@@ -22,8 +22,5 @@ final class RMCharacterViewController: UIViewController {
         )
         
         print(request.url)
-        
-        RMService.shared.execute(<#T##request: RMRequest##RMRequest#>, 
-                                 expecting: <#T##(Decodable & Encodable).Protocol#>, completion: <#T##(Result<String, Error>) -> Void#>)
     }
 }

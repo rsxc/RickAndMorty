@@ -19,7 +19,7 @@ final class RMRequest {
     
     private let endpoint: RMEndpoint
     
-    private let pathComponents: [String]
+    private let pathComponents: Set<String>
     
     private let queryParameters: [URLQueryItem]
     
