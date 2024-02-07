@@ -19,7 +19,7 @@ final class RMRequest {
     
     private let endpoint: RMEndpoint
     
-    private let pathComponents: Set<String>
+    private let pathComponents: [String]
     
     private let queryParameters: [URLQueryItem]
     
@@ -55,7 +55,7 @@ final class RMRequest {
     
     init(
         endpoint: RMEndpoint,
-        pathComponents: Set<String> = [],
+        pathComponents: [String] = [],
         queryParameters: [URLQueryItem] = []
     ) {
         self.endpoint = endpoint
