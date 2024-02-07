@@ -55,7 +55,7 @@ final class RMRequest {
     
     init(
         endpoint: RMEndpoint,
-        pathComponents: [String] = [],
+        pathComponents: Set<String> = [],
         queryParameters: [URLQueryItem] = []
     ) {
         self.endpoint = endpoint
