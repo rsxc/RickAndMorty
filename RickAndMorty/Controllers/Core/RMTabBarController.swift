@@ -45,6 +45,4 @@ final class RMTabBarController: UITabBarController {
             animated: true
         )
     }
-
 }
-

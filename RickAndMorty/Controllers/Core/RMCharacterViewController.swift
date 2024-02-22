@@ -11,22 +11,20 @@ import UIKit
 /// Controller to show and search for Characters
 final class RMCharacterViewController: UIViewController {
 
+    private let characterListView = CharacterListView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         title = "Characters"
-        
-        RMService.shared.execute(.listCharactersRequest, expecting: RmGetAllCharactersResponse.self) { result in
-            switch result {
-            case .success(let model):
-                print("Total: "+String(model.info.count))
-                print("Page result count: "+String(model.results.count))
-            case .failure(let error):
-                print(String(describing: error))
-            }
-        }
+        setUpView()
+    }
+    
+    private func setUpView() {
+        view.addSubview(characterListView)
+        characterListView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+        characterListView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor).isActive = true
+        characterListView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor).isActive = true
+        characterListView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
     }
 }
-
-//typeMismatch(Swift.String, Swift.DecodingError.Context(codingPath: [], debugDescription: "Expected to decode String but found a dictionary instead.", underlyingError: nil))
-
